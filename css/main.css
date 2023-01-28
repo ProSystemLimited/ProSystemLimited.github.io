@@ -1,0 +1,963 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+  font-family: 'GeneralSans';
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/Thunder-LC.ttf');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/Thunder-MediumLC.ttf');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/Thunder-SemiBoldLC.ttf');
+  font-weight:600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/Thunder-BoldLC.ttf');
+  font-weight:700;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/Thunder-ExtraBoldLC.ttf');
+  font-weight:800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/Thunder-BlackLC.ttf');
+  font-weight:900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeneralSans';
+  src: url('../fonts/GeneralSans-Regular.otf');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeneralSans';
+  src: url('../fonts/GeneralSans-Medium.otf');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeneralSans';
+  src: url('../fonts/GeneralSans-Semibold.otf');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeneralSans';
+  src: url('../fonts/GeneralSans-Bold.otf');
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+.section {
+  padding: 1.5rem;
+  background-color: #1c1c1c;
+
+}
+
+.container {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: calc(100vh - 1.5rem - 1.5rem);
+}
+
+#about .container {
+  justify-content: center;
+}
+
+.header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_top h2 {
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Thunder';
+  margin: 0
+}
+
+.links {
+  flex: 1;
+}
+
+.links a {
+  font-size: 1.125rem;
+  color: #000;
+  text-underline-position: under;
+  font-weight: 500;
+  transition: color 300ms ease;
+}
+
+.links a:hover {
+  color: gray;
+}
+
+.call_to_action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.call_to_action_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #fff;
+  background-color: #1c1c1c;
+  flex: unset;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.call_to_action_container:hover {
+  transform: scale(1.1);
+}
+
+.call_to_action_container a {
+  color:#fff;
+  text-decoration: none;
+}
+
+.header_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_bottom h1 {
+  font-family: 'Thunder';
+  font-weight: 800;
+  font-size: 8rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.header_bottom p {
+  font-size: 2rem;
+  line-height: 1.3;
+  max-width: 25ch;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.header_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.socials li {
+  margin-right: 20px;
+}
+
+.socials svg {
+  width: 40px;
+  height: 40px;
+}
+
+.button {
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  background-color: #000;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 300ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: gray;
+}
+
+.scroll_down {
+  width: 32px;
+}
+
+.section:nth-of-type(2) .container {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url('../img/6319fa37c72586848c2bf04c_project-bg-creatorled.jpg');
+}
+
+.about_grid {
+  display: grid;
+  gap: 2rem;
+}
+
+
+.about_grid {
+  grid-template-columns: repeat(4,1fr);
+}
+
+.contact {
+  grid-row: 2/4;
+  grid-column: 4/5;
+}
+
+/* .back_to_top {
+  grid-row: span 2;
+} */
+
+.my_favorite_quotes {
+  grid-row: span 2;
+}
+
+.my_story {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grid_cell {
+  border-radius: 1rem;
+  padding: 2.5rem;
+  height: 100%;
+}
+
+.my_story {
+  background-color: #95ada847;
+  color: #111;
+
+}
+
+.my_favorite_quotes {
+  background-color: #abaddd87;
+}
+
+.back_to_top {
+  background-color: #beed3a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: transform 300ms ease;
+}
+
+.back_to_top:hover {
+  transform: scale(1.02);
+}
+
+
+
+.back_to_top svg {
+  width: 100px;
+}
+
+.personal_info {
+  background-color: #fafecf7d;
+}
+
+.hobbies {
+  background-color: #feebcf82;
+}
+
+.links_resources {
+  background-color: #feebcf80;
+}
+
+.info h3 {
+  font-size: 2.5rem;
+  font-family: 'Thunder';
+  line-height: 30px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.links_resources ul {
+  padding: 0;
+  list-style-position: inside;
+  list-style-type: square;
+}
+
+.links_resources ul li {
+  margin-bottom: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.125em;
+}
+
+.links_resources ul li svg {
+  width: 14px;
+  margin-left: 10px;
+}
+
+.links_resources ul li a {
+  color: #000;
+  transition: color 300ms ease;
+}
+.links_resources ul li a:hover {
+  color: rgb(90, 89, 89);
+}
+
+.contact {
+  background-color: #2a27e2;
+  transition: transform 300ms ease;
+  display: flex;
+  align-items: center;
+}
+
+.contact:hover {
+  transform: scale(1.02);
+}
+
+.contact h3 {
+  font-size: 4rem;
+  line-height: 1;
+  color: #fff;
+  font-family: 'Thunder';
+  text-transform: 700;
+  margin: 1rem 0;
+}
+
+.contact p {
+  color: #fff;
+  font-size: 1.125em;
+}
+
+.about_headline, .about_paragraph {
+  width: 100%;
+}
+
+.about_headline h2 {
+  font-size: 4.5rem;
+  max-width: 18ch;
+  font-family: 'Thunder';
+  margin: 0;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about_paragraph p {
+  font-weight: 500;
+  font-size: 1.125em;
+}
+
+.my_favorite_quotes svg {
+  width: 24px;
+}
+
+.my_favorite_quotes ul {
+  list-style-type: square;
+}
+
+.my_favorite_quotes p {
+  font-weight: 500;
+  font-size: 1.125em;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.back_to_top h3 {
+  font-size: 4rem;
+  line-height: 1;
+  margin: 0;
+  font-weight: 700;
+  color: #000;
+  font-family: 'Thunder';
+}
+
+.personal_info table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.125em;
+}
+
+.personal_info table tr td {
+  padding: 5px;
+  font-weight: 500;
+}
+
+.personal_info table tr {
+  border-bottom: 1px solid #00000014;
+}
+
+.personal_info table tr:last-of-type {
+  border: none;
+}
+
+.hobbies p {
+  font-weight: 500;
+  font-size: 1.125em;
+}
+
+@media(min-width: 768px) {
+  .container {
+    padding: 5rem;
+  }
+
+  .about_headline, .about_paragraph {
+    width: 50%;
+  }
+}
+
+
+@media(min-width: 480px) {
+  html {
+    font-size: 1.1vw;
+  }
+}
+
+
+@media(min-width: 991px) {
+  html {
+    font-size: 0.85vw;
+  }
+
+  .my_favorite_quotes svg {
+    width: 2vw;
+  }
+}
+
+
+@media(max-width: 1199px) {
+  .about_grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+  .my_story {
+    grid-row: 1/2;
+    grid-column: 1/3;
+  }
+
+  .my_favorite_quotes {
+    grid-row: 1/2;
+  }
+
+  .personal_info {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .hobbies {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
+  .links_resources {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .contact {
+    grid-column: 3/4;
+  }
+
+  .back_to_top svg {
+    width: 80px;
+  }
+}
+
+@media(max-width: 767px) {
+  .about_grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .my_story {
+    grid-row: unset;
+    grid-column: unset;
+    flex-direction: column;
+    grid-column: span 2;
+  }
+
+  .my_favorite_quotes {
+    grid-row: unset;
+  }
+
+  .personal_info {
+    grid-column: unset;
+    grid-row: unset;
+  }
+  .hobbies {
+    grid-row: unset;
+    grid-column: unset;
+  }
+
+  .links_resources {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .contact {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .go_to_home_anchor {
+grid-row: 4/5;
+  }
+
+  .contact svg {
+    width: 100%;
+    height: 60px;
+  }
+
+  .about_headline h2 {
+    font-size: 5.5rem;
+  }
+
+  .about_paragraph p {
+    font-size: 2.125em;
+  }
+
+  .my_favorite_quotes p {
+    font-size: 2.125em;
+  }
+
+  .info h3 {
+    font-size: 4.5rem;
+  }
+
+  .personal_info table {
+    font-size: 2.125em;
+  }
+
+  .hobbies p {
+    font-size: 2.125em;
+  }
+
+  .links_resources ul li {
+    font-size: 2.125em;
+  }
+
+  .contact p {
+    font-size: 2.125em;
+  }
+
+  .back_to_top h3 {
+    font-size: 4.5rem;
+  }
+
+  .contact h3 {
+    font-size: 4.5rem;
+  }
+
+}
+
+@media(max-width: 479px) {
+  .about_grid {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+
+  .my_story {
+    grid-column: unset;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .call_to_action_container {
+    font-size: 14px;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .header_top h2 {
+    font-size: 2rem;
+  }
+
+  .header_bottom {
+    flex-direction: column;
+  }
+
+  .header_bottom h1 {
+    font-size: 40px;
+  }
+
+  .header_bottom p {
+    font-size: 16px;
+    margin-left: unset;
+  }
+
+  .scroll_down {
+    width: 25px;
+  }
+
+  .button {
+    font-size: 12px;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .grid_cell {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .about_headline h2 {
+    font-size: 34px;
+    max-width: unset;
+  }
+
+  .about_paragraph p {
+    font-size: 16px;
+  }
+
+  .my_favorite_quotes p {
+    font-size: 16px;
+  }
+
+  .info h3 {
+    font-size:34px;
+  }
+
+  .personal_info table {
+    font-size: 16px;
+  }
+
+  .back_to_top h3 {
+    font-size: 36px;
+  }
+
+  .hobbies p {
+    font-size: 16px;
+  }
+
+  .links_resources ul li {
+    font-size: 16px;
+  }
+
+  .contact h3 {
+    font-size: 34px;
+  }
+
+  .contact p {
+    font-size: 16px;
+  }
+
+  .go_to_home_anchor {
+    grid-row: 7/8;
+  }
+
+}
