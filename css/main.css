@@ -343,10 +343,23 @@ textarea {
 .section {
   padding: 1.5rem;
   background-color: #1c1c1c;
+  position: relative;
+}
 
+#lastModified {
+  color: #e5e5e5;
+  font-size: 10px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
 }
 
 .container {
+  position: relative;
   padding: 2rem;
   border-radius: 1rem;
   background-color: #e2e2e2;
@@ -498,6 +511,10 @@ textarea {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: url('../img/6319fa37c72586848c2bf04c_project-bg-creatorled.jpg');
+}
+
+.section:nth-of-type(2) {
+  padding-bottom: 22px;
 }
 
 .about_grid {
@@ -904,8 +921,10 @@ grid-row: 4/5;
   }
 
   .section {
-    padding: 1rem;
+    padding: 0.5rem;
   }
+
+
 
   .container {
     padding: 1rem;

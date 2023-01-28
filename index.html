@@ -3,22 +3,26 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Ahnaf Ahmed</title>
+  <meta name="description" content="Personal portfolio">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
+  <meta property="og:title" content="Ahnaf Ahmed">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prosystemlimited.github.io">
   <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="icon.png"/>
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
+  <link rel="preload" href="fonts/GeneralSans-Medium.otf" as="font" type="font/otf" >
+  <link rel="preload" href="fonts/GeneralSans-Regular.otf" as="font" type="font/otf" >
+  <link rel="preload" href="fonts/Thunder-BoldLC.ttf" as="font" type="font/ttf" >
+  <link rel="preload" href="fonts/Thunder-ExtraBoldLC.ttf" as="font" type="font/ttf" >
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -248,10 +252,18 @@
       </a>
      
     </div>
+   
   </div>
+  <p id="lastModified"></p>
 </section>
   <script src="js/main.js"></script>
-
+  <script>
+    /* Function to use lastModified property */
+    function geeks() {
+        document.getElementById("lastModified").innerHTML = [document.location.hostname, `Last modified on ${document.lastModified}`].filter((e) => e !== '').join(', ');
+    }
+    geeks()
+</script>
 </body>
 
 </html>
