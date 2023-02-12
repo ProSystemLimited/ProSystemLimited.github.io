@@ -389,6 +389,11 @@ textarea {
   margin: 0
 }
 
+.header_top h2 a {
+  text-decoration: none;
+  color: #000;
+}
+
 .links {
   flex: 1;
 }
@@ -735,6 +740,20 @@ textarea {
 .hobbies p {
   font-weight: 500;
   font-size: 1.125em;
+}
+
+.projects_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.projects_container ul {
+  padding: 0;
+  margin: 0;
+
 }
 
 @media(min-width: 768px) {
