@@ -505,12 +505,25 @@ textarea {
   width: 32px;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .section:nth-of-type(2) .container {
+  overflow: hidden;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: url('../img/6319fa37c72586848c2bf04c_project-bg-creatorled.jpg');
+  background-color: #161616;
+  background-image: url('../img/6319fa27bd3a0850440233f5_project-bg-stellifi.svg');
 }
 
 .section:nth-of-type(2) {
@@ -518,6 +531,8 @@ textarea {
 }
 
 .about_grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 2rem;
 }
@@ -555,13 +570,11 @@ textarea {
 }
 
 .my_story {
-  background-color: #95ada847;
-  color: #111;
-
+  background-color: #01aa89;
 }
 
 .my_favorite_quotes {
-  background-color: #abaddd87;
+  background-color: #abaddd;
 }
 
 .back_to_top {
@@ -584,15 +597,15 @@ textarea {
 }
 
 .personal_info {
-  background-color: #fafecf7d;
+  background-color: #fafecf;
 }
 
 .hobbies {
-  background-color: #feebcf82;
+  background-color: #feebcf;
 }
 
 .links_resources {
-  background-color: #feebcf80;
+  background-color: #fed2cf;
 }
 
 .info h3 {
@@ -624,11 +637,11 @@ textarea {
 }
 
 .links_resources ul li a {
-  color: #000;
+  color: #1c1c1c;
   transition: color 300ms ease;
 }
 .links_resources ul li a:hover {
-  color: rgb(90, 89, 89);
+  color: gray;
 }
 
 .contact {
